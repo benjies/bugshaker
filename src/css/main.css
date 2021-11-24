@@ -1,0 +1,491 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif; }
+
+.landingNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff2f6;
+  background-color: #801f3f;
+  padding: 2rem 1rem; }
+  .landingNavbar .logoTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .landingNavbar .navItems {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .landingNavbar .navItems .navLink {
+      margin: 0 10px;
+      font-size: 1.3em;
+      text-decoration: none;
+      color: #fff2f6; }
+
+.hero-body {
+  margin: 5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .hero-body .heroIMG {
+    max-width: 500px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: #801f3f 2px solid; }
+    @media screen and (max-width: 500px) {
+      .hero-body .heroIMG {
+        max-width: 300px; } }
+  .hero-body h2 {
+    font-size: 1.7em;
+    margin-bottom: 10px; }
+  .hero-body p {
+    font-size: 1.2em;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem; }
+  .hero-body .getStartedBTN {
+    text-decoration: none;
+    padding: 1rem;
+    color: #fff2f6;
+    background-color: #801f3f;
+    border-radius: 15px;
+    min-width: 200px;
+    text-align: center;
+    margin-bottom: 5rem; }
+    .hero-body .getStartedBTN:hover {
+      background-color: #973555; }
+
+.landing-FAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #973555;
+  color: #fff2f6;
+  padding: 2rem 0; }
+  .landing-FAQ .FAQ-title {
+    margin-bottom: 10px; }
+  .landing-FAQ .FAQ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0; }
+    .landing-FAQ .FAQ h3 {
+      margin-top: 10px; }
+    .landing-FAQ .FAQ p {
+      margin-top: 10px;
+      width: 50%;
+      text-align: center; }
+
+.landingFooter {
+  background-color: #801f3f;
+  color: #fff2f6;
+  text-align: center;
+  padding: 1rem 0; }
+
+.userAuthoNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #801f3f;
+  color: #fff2f6; }
+
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+  color: #fff2f6; }
+  .signup-wrapper .signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #973555;
+    border-radius: 15px;
+    width: 500px; }
+    @media screen and (max-width: 500px) {
+      .signup-wrapper .signup-form {
+        width: 300px; } }
+    .signup-wrapper .signup-form #form-question {
+      text-align: center;
+      margin-bottom: 20px; }
+    .signup-wrapper .signup-form .signup-inside-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      .signup-wrapper .signup-form .signup-inside-wrapper label {
+        margin-left: 5px;
+        margin-bottom: 5px;
+        text-emphasis: bold; }
+      .signup-wrapper .signup-form .signup-inside-wrapper input {
+        margin-bottom: 20px;
+        padding: 0.5rem 0.75rem;
+        border-radius: 12px;
+        outline: none;
+        box-shadow: 0px 2px #f3739d;
+        border: 1px solid rgba(92, 30, 30, 0.527); }
+        .signup-wrapper .signup-form .signup-inside-wrapper input:active, .signup-wrapper .signup-form .signup-inside-wrapper input:hover, .signup-wrapper .signup-form .signup-inside-wrapper input:focus {
+          border: 1px solid #fff2f6;
+          box-shadow: 0px 2px #f55f5f; }
+    .signup-wrapper .signup-form input[type='submit'] {
+      outline: none;
+      border: none;
+      margin-top: 20px;
+      box-shadow: 0px 2px #f3739d;
+      padding: 0.5rem 0.75rem;
+      border-radius: 12px;
+      width: 300px; }
+      @media screen and (max-width: 500px) {
+        .signup-wrapper .signup-form input[type='submit'] {
+          width: 200px; } }
+
+.signup-error {
+  padding: 0.5rem;
+  width: 300px;
+  text-align: center;
+  border: #fff2f6 2px solid;
+  background-color: #fff2f6;
+  color: #801f3f;
+  margin-bottom: 10px;
+  border-radius: 10px; }
+
+.logoHome {
+  text-decoration: none;
+  color: #fff2f6; }
+
+.forgot-password {
+  color: #fff2f6;
+  margin-bottom: 20px; }
+
+.signup-login {
+  text-align: center; }
+  .signup-login a {
+    color: #801f3f; }
+
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 74px 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 'dashboardNavbar dashboardNavbar dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader' 'dashboardNavbar dashboardNavbar dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview' 'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets' 'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets'; }
+  @media screen and (max-width: 1400px) {
+    .dashboardContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 74px 1fr 1fr 1fr;
+      gap: 0px 0px;
+      grid-template-areas: 'dashboardNavbar dashboardNavbar dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader' 'dashboardNavbar dashboardNavbar dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview' 'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets' 'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets'; } }
+  @media screen and (max-width: 850px) {
+    .dashboardContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas: 'dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar' 'dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader' 'dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview' 'dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets'; }
+      .dashboardContainer .dashboardNavbar {
+        height: 100px; }
+        .dashboardContainer .dashboardNavbar .dashNavOptions {
+          display: none; }
+        .dashboardContainer .dashboardNavbar .flexDashLink {
+          display: none; }
+        .dashboardContainer .dashboardNavbar .dashNavDisplayBTN {
+          display: block;
+          position: fixed;
+          top: 20px;
+          right: 10px; }
+          .dashboardContainer .dashboardNavbar .dashNavDisplayBTN:hover {
+            cursor: pointer; } }
+
+.dashboardNavbar {
+  grid-area: dashboardNavbar;
+  height: 100vh;
+  background-color: #973555;
+  color: #fff2f6;
+  display: flex;
+  flex-direction: column; }
+  .dashboardNavbar .dashNavDisplayBTN {
+    display: none; }
+  .dashboardNavbar .dashNavLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aa4465;
+    color: #fff2f6;
+    padding: 1rem 0; }
+  .dashboardNavbar .dashNavOptions {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    margin-top: 4rem; }
+    .dashboardNavbar .dashNavOptions .my-space:hover,
+    .dashboardNavbar .dashNavOptions .all-users:hover {
+      cursor: pointer; }
+    .dashboardNavbar .dashNavOptions .myspaceWrap,
+    .dashboardNavbar .dashNavOptions .allusersWrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center; }
+    .dashboardNavbar .dashNavOptions .active-block {
+      top: 180px;
+      display: block;
+      position: fixed;
+      height: 20px;
+      width: 50px;
+      background-color: #f3739d; }
+  .dashboardNavbar .active-line {
+    display: inline-block;
+    height: 5px;
+    width: 100%;
+    background-color: #f3739d;
+    margin-top: 26px; }
+  .dashboardNavbar .flexDashLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em; }
+  .dashboardNavbar .dashNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    margin-left: 1rem;
+    overflow-y: scroll; }
+    .dashboardNavbar .dashNavLinks p {
+      margin: 20px 0;
+      font-size: 1.5em; }
+      .dashboardNavbar .dashNavLinks p:hover {
+        cursor: pointer; }
+    @media screen and (max-width: 850px) {
+      .dashboardNavbar .dashNavLinks {
+        display: none; } }
+    .dashboardNavbar .dashNavLinks::-webkit-scrollbar {
+      background-color: #801f3f;
+      display: none; }
+    .dashboardNavbar .dashNavLinks .flexDashUser .orgUser {
+      font-size: 1em; }
+  .dashboardNavbar .username {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    font-size: 2em; }
+
+.dashboardMain {
+  grid-area: dashboardHeader;
+  border-bottom: #aa446463 1px solid;
+  color: #801f3f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  @media screen and (max-width: 850px) {
+    .dashboardMain {
+      justify-content: space-between; } }
+  .dashboardMain h2 {
+    margin-left: 20px; }
+  .dashboardMain .mainBTNS {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .dashboardMain .submitBugBTN {
+    justify-content: flex-end;
+    padding: 0.5rem;
+    background-color: #801f3f;
+    color: #fff2f6;
+    border-radius: 12px;
+    margin: 0 10px; }
+    .dashboardMain .submitBugBTN:hover {
+      cursor: pointer;
+      background-color: #973555; }
+    @media screen and (max-width: 850px) {
+      .dashboardMain .submitBugBTN {
+        position: relative; } }
+  .dashboardMain .editBugBTN {
+    justify-content: flex-end;
+    padding: 0.5rem;
+    background-color: #801f3f;
+    color: #fff2f6;
+    border-radius: 12px; }
+    .dashboardMain .editBugBTN:hover {
+      cursor: pointer;
+      background-color: #973555; }
+    @media screen and (max-width: 850px) {
+      .dashboardMain .editBugBTN {
+        position: relative; } }
+
+.dashboardOverview {
+  grid-area: dashboardOverview;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: #aa446463 1px solid; }
+  .dashboardOverview h2 {
+    color: #801f3f; }
+  .dashboardOverview .bugCounterItems {
+    display: flex;
+    flex-direction: row; }
+    .dashboardOverview .bugCounterItems .counter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      padding: 2rem;
+      width: 300px; }
+      @media screen and (max-width: 850px) {
+        .dashboardOverview .bugCounterItems .counter {
+          padding: 1rem;
+          width: 200px; } }
+    .dashboardOverview .bugCounterItems .counter.open {
+      background-color: #9aedbb;
+      color: #801f3f;
+      border-radius: 15px; }
+    .dashboardOverview .bugCounterItems .counter.closed {
+      background-color: #99e9fb;
+      color: #801f3f;
+      border-radius: 15px; }
+    .dashboardOverview .bugCounterItems .counter.critical {
+      background-color: #f55f5f;
+      color: #801f3f;
+      border-radius: 15px; }
+
+.dashboardTickets {
+  grid-area: dashboardTickets;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .dashboardTickets .ticketDisplayTitles {
+    width: 100%;
+    margin-top: 20px;
+    color: #801f3f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-areas: '. title status created user .'; }
+    .dashboardTickets .ticketDisplayTitles .bugTitle {
+      grid-area: title; }
+    .dashboardTickets .ticketDisplayTitles .bugStatusTitle {
+      grid-area: status; }
+    .dashboardTickets .ticketDisplayTitles .bugCreatedTitle {
+      grid-area: created; }
+    .dashboardTickets .ticketDisplayTitles .bugCreatedByTitle {
+      grid-area: user; }
+    @media screen and (max-width: 850px) {
+      .dashboardTickets .ticketDisplayTitles {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'title status created user'; } }
+  .dashboardTickets .project-tickets {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #801f3f;
+    width: 100%;
+    height: 375px;
+    overflow-y: scroll; }
+    .dashboardTickets .project-tickets::-webkit-scrollbar {
+      background: #973555;
+      width: 10px; }
+    .dashboardTickets .project-tickets::-webkit-scrollbar-thumb {
+      background: #f3739d;
+      border-radius: 12px; }
+    .dashboardTickets .project-tickets h3 {
+      margin-left: 30px; }
+    .dashboardTickets .project-tickets .bug-ticket {
+      margin-top: 20px;
+      color: #801f3f;
+      font-size: 0.74em;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      grid-template-areas: '. title status created user .'; }
+      .dashboardTickets .project-tickets .bug-ticket .bugNumber {
+        grid-area: title; }
+      .dashboardTickets .project-tickets .bug-ticket .bugStatus {
+        grid-area: status; }
+      .dashboardTickets .project-tickets .bug-ticket .bugDateCreate {
+        grid-area: created; }
+      .dashboardTickets .project-tickets .bug-ticket .bugCreatedBy {
+        grid-area: user; }
+      .dashboardTickets .project-tickets .bug-ticket .OPEN {
+        background-color: #9aedbb; }
+      .dashboardTickets .project-tickets .bug-ticket .CRITICAL {
+        background-color: #f55f5f;
+        color: #fff2f6; }
+      .dashboardTickets .project-tickets .bug-ticket .CLOSED {
+        background-color: #99e9fb; }
+      @media screen and (max-width: 850px) {
+        .dashboardTickets .project-tickets .bug-ticket {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-areas: 'title status created user'; } }
+
+.submitNewBug {
+  z-index: 2;
+  position: absolute;
+  flex: 0 0 100%;
+  width: 75vw;
+  height: 50vh;
+  top: 50px;
+  left: 12%;
+  border-radius: 12px;
+  background-color: #801f3f;
+  color: #fff2f6; }
+  .submitNewBug .newBugForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; }
+    .submitNewBug .newBugForm label {
+      margin: 10px 0; }
+    .submitNewBug .newBugForm input,
+    .submitNewBug .newBugForm select {
+      border: none;
+      outline: none;
+      padding: 0.2rem;
+      width: 50%; }
+    .submitNewBug .newBugForm .lockedInput {
+      background-color: #f3739d;
+      color: #fff2f6;
+      text-align: center; }
+    .submitNewBug .newBugForm .lockedDate {
+      background-color: #f3739d;
+      color: #fff2f6;
+      text-align: left; }
+    .submitNewBug .newBugForm .submitNewBugBTN {
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 12px; }
+      .submitNewBug .newBugForm .submitNewBugBTN:hover {
+        cursor: pointer; }
+    .submitNewBug .newBugForm .closeBox {
+      width: 100%;
+      text-align: right;
+      text-emphasis: bold;
+      font-size: 1em; }
+      .submitNewBug .newBugForm .closeBox:hover {
+        cursor: pointer; }

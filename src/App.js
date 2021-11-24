@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import LandingHome from './components/LandingHome';
+import { Signup } from './components/handleAuths/Signup';
+import { Login } from './components/handleAuths/Login';
+import { ForgotPassword } from './components/handleAuths/ForgotPassword';
+// import { Signup } from './signup_login/Signup';
+// import { Login } from './signup_login/Login';
+// import { ForgotPassword } from './signup_login/ForgotPassword';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from '../src/contexts/AuthContext';
+import UserDashboard from './components/Dashboard/Dashboard';
+// import UserDashboard from './UserDashboard/UserDashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<LandingHome />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route
+            exact
+            path='/dashboard'
+            element={
+              <PrivateRoute redirectTo='/'>
+                <UserDashboard />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

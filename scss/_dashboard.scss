@@ -1,0 +1,409 @@
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 74px 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'dashboardNavbar dashboardNavbar dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader'
+    'dashboardNavbar dashboardNavbar dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview'
+    'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets'
+    'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets';
+  @media screen and (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 74px 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      'dashboardNavbar dashboardNavbar dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader'
+      'dashboardNavbar dashboardNavbar dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview'
+      'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets'
+      'dashboardNavbar dashboardNavbar dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets';
+  }
+  @media screen and (max-width: 850px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar dashboardNavbar'
+      'dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader dashboardHeader'
+      'dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview dashboardOverview'
+      'dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets dashboardTickets';
+    .dashboardNavbar {
+      height: 100px;
+      .dashNavOptions {
+        display: none;
+      }
+      .flexDashLink {
+        display: none;
+      }
+      .dashNavDisplayBTN {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 10px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.dashboardNavbar {
+  grid-area: dashboardNavbar;
+  height: 100vh;
+  background-color: $primary-colour;
+  color: $light-text-colour;
+  display: flex;
+  flex-direction: column;
+  .dashNavDisplayBTN {
+    display: none;
+  }
+  //   Logo
+  .dashNavLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-colour;
+    color: $light-text-colour;
+    padding: 1rem 0;
+  }
+  //   Nav Options
+  .dashNavOptions {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    margin-top: 4rem;
+    .my-space,
+    .all-users {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .myspaceWrap,
+    .allusersWrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    // Active  Block
+    .active-block {
+      top: 180px;
+      display: block;
+      position: fixed;
+      height: 20px;
+      width: 50px;
+      background-color: $highlight-colour;
+    }
+  }
+  .active-line {
+    display: inline-block;
+    height: 5px;
+    width: 100%;
+    background-color: $highlight-colour;
+    margin-top: 26px;
+  }
+
+  .flexDashLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em;
+  }
+
+  //   Dash Links
+  .dashNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    margin-left: 1rem;
+    p {
+      margin: 20px 0;
+      font-size: 1.5em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      background-color: $main-text-colour;
+      display: none;
+    }
+    .flexDashUser {
+      .orgUser {
+        font-size: 1em;
+      }
+    }
+  }
+  .username {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    font-size: 2em;
+  }
+}
+
+.dashboardMain {
+  grid-area: dashboardHeader;
+  border-bottom: #aa446463 1px solid;
+  color: $main-text-colour;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 850px) {
+    justify-content: space-between;
+  }
+  h2 {
+    margin-left: 20px;
+  }
+  .mainBTNS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .submitBugBTN {
+    justify-content: flex-end;
+    padding: 0.5rem;
+    background-color: $main-text-colour;
+    color: $light-text-colour;
+    border-radius: 12px;
+    // position: fixed;
+    // right: 30px;
+    margin: 0 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-colour;
+    }
+    @media screen and (max-width: 850px) {
+      position: relative;
+    }
+  }
+  .editBugBTN {
+    justify-content: flex-end;
+    padding: 0.5rem;
+    background-color: $main-text-colour;
+    color: $light-text-colour;
+    border-radius: 12px;
+    // position: fixed;
+    // right: 160px;
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-colour;
+    }
+    @media screen and (max-width: 850px) {
+      position: relative;
+    }
+  }
+}
+
+.dashboardOverview {
+  grid-area: dashboardOverview;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: #aa446463 1px solid;
+  h2 {
+    color: $main-text-colour;
+  }
+  .bugCounterItems {
+    display: flex;
+    flex-direction: row;
+    .counter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      padding: 2rem;
+      width: 300px;
+      @media screen and (max-width: 850px) {
+        padding: 1rem;
+        width: 200px;
+      }
+    }
+    .counter.open {
+      background-color: $open-bugs;
+      color: $main-text-colour;
+      border-radius: 15px;
+    }
+    .counter.closed {
+      background-color: $closed-bugs;
+      color: $main-text-colour;
+      border-radius: 15px;
+    }
+    .counter.critical {
+      background-color: $critical-bugs;
+      color: $main-text-colour;
+      border-radius: 15px;
+    }
+  }
+}
+
+.dashboardTickets {
+  grid-area: dashboardTickets;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ticketDisplayTitles {
+    width: 100%;
+    margin-top: 20px;
+    color: $main-text-colour;
+    // Grid Logic
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-areas: '. title status created user .';
+    .bugTitle {
+      grid-area: title;
+    }
+    .bugStatusTitle {
+      grid-area: status;
+    }
+    .bugCreatedTitle {
+      grid-area: created;
+    }
+    .bugCreatedByTitle {
+      grid-area: user;
+    }
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: 'title status created user';
+    }
+  }
+
+  .project-tickets {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: $main-text-colour;
+    width: 100%;
+    height: 375px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      background: $primary-colour;
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $highlight-colour;
+      border-radius: 12px;
+    }
+    h3 {
+      margin-left: 30px;
+    }
+    .bug-ticket {
+      margin-top: 20px;
+      color: $main-text-colour;
+      font-size: 0.74em;
+      //   Grid Logic
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      grid-template-areas: '. title status created user .';
+      .bugNumber {
+        grid-area: title;
+      }
+      .bugStatus {
+        grid-area: status;
+      }
+      .bugDateCreate {
+        grid-area: created;
+      }
+      .bugCreatedBy {
+        grid-area: user;
+      }
+      .OPEN {
+        background-color: $open-bugs;
+      }
+      .CRITICAL {
+        background-color: $critical-bugs;
+        color: $light-text-colour;
+      }
+      .CLOSED {
+        background-color: $closed-bugs;
+      }
+      @media screen and (max-width: 850px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'title status created user';
+      }
+    }
+  }
+}
+
+.submitNewBug {
+  z-index: 2;
+  position: absolute;
+  flex: 0 0 100%;
+  width: 75vw;
+  height: 50vh;
+  top: 50px;
+  left: 12%;
+  border-radius: 12px;
+  background-color: $main-text-colour;
+  color: $light-text-colour;
+  .newBugForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    label {
+      margin: 10px 0;
+    }
+    input,
+    select {
+      border: none;
+      outline: none;
+      padding: 0.2rem;
+      width: 50%;
+    }
+    .lockedInput {
+      background-color: $highlight-colour;
+      color: $light-text-colour;
+      text-align: center;
+    }
+    .lockedDate {
+      background-color: $highlight-colour;
+      color: $light-text-colour;
+      text-align: left;
+    }
+    .submitNewBugBTN {
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 12px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .closeBox {
+      width: 100%;
+      text-align: right;
+      text-emphasis: bold;
+      font-size: 1em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

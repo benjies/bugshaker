@@ -1,0 +1,109 @@
+// LANDING PAGE STYLING
+// ~~~~~~~~~~~~~~~~~~~~~~
+
+// Landing Navbar
+.landingNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $light-text-colour;
+  background-color: $main-text-colour;
+  padding: 2rem 1rem;
+  .logoTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navLink {
+      margin: 0 10px;
+      font-size: 1.3em;
+      text-decoration: none;
+      color: $light-text-colour;
+    }
+  }
+}
+
+// Landing HERO
+.hero-body {
+  margin: 5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // IGM
+  .heroIMG {
+    max-width: 500px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: $main-text-colour 2px solid;
+    @media screen and (max-width: 500px) {
+      max-width: 300px;
+    }
+  }
+  h2 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2em;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .getStartedBTN {
+    text-decoration: none;
+    padding: 1rem;
+    color: $light-text-colour;
+    background-color: $main-text-colour;
+    border-radius: 15px;
+    min-width: 200px;
+    text-align: center;
+    margin-bottom: 5rem;
+    &:hover {
+      background-color: $primary-colour;
+    }
+  }
+}
+
+// Landing FAQ
+.landing-FAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-colour;
+  color: $light-text-colour;
+  padding: 2rem 0;
+  .FAQ-title {
+    margin-bottom: 10px;
+  }
+  //   FAQ Items
+  .FAQ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    h3 {
+      margin-top: 10px;
+    }
+    p {
+      margin-top: 10px;
+      width: 50%;
+      text-align: center;
+    }
+  }
+}
+
+.landingFooter {
+  background-color: $main-text-colour;
+  color: $light-text-colour;
+  text-align: center;
+  padding: 1rem 0;
+}
