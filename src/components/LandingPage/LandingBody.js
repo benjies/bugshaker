@@ -15,7 +15,7 @@ export default function LandingBody() {
           A clean and modern UI built to help small scale teams tackle their bug
           issues without interuptions
         </p>
-        <Link path to='/' className='getStartedBTN'>
+        <Link path to='/signup' className='getStartedBTN'>
           Get Started
         </Link>
       </div>
