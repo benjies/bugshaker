@@ -19,7 +19,9 @@ export default function DashboardTickets({ bugs }) {
       };
       holderArray.push(newFlatBug);
     });
-    holderArray.reverse();
+    holderArray.sort(
+      (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
+    );
     setFlatBugs(holderArray);
   };
   // Change Bug status by clicking on Status
