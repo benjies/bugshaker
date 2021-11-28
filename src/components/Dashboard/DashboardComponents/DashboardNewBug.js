@@ -45,7 +45,7 @@ export default function DashboardNewBug({ setNewBug }) {
   let date = curr.toISOString().substr(0, 10);
 
   return (
-    <div className='submitNewBug'>
+    <div className='submitNewBug submitNewBugADD'>
       <form className='newBugForm'>
         <p className='closeBox' onClick={closeBox}>
           X

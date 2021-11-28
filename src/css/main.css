@@ -362,6 +362,15 @@
       background-color: #f55f5f;
       color: #801f3f;
       border-radius: 15px; }
+    .dashboardOverview .bugCounterItems .counter.open,
+    .dashboardOverview .bugCounterItems .counter.closed,
+    .dashboardOverview .bugCounterItems .counter.critical {
+      height: 100%; }
+      @media screen and (max-width: 850px) {
+        .dashboardOverview .bugCounterItems .counter.open,
+        .dashboardOverview .bugCounterItems .counter.closed,
+        .dashboardOverview .bugCounterItems .counter.critical {
+          height: inherit; } }
 
 .dashboardTickets {
   grid-area: dashboardTickets;
@@ -410,6 +419,7 @@
       margin-left: 30px; }
     .dashboardTickets .project-tickets .bug-ticket {
       margin-top: 20px;
+      margin-bottom: 20px;
       color: #801f3f;
       font-size: 0.74em;
       display: grid;
@@ -419,7 +429,8 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      grid-template-areas: '. title status created user .'; }
+      grid-template-areas: '. title status created user .';
+      font-size: 1em; }
       .dashboardTickets .project-tickets .bug-ticket .bugNumber {
         grid-area: title; }
       .dashboardTickets .project-tickets .bug-ticket .bugStatus {
@@ -438,19 +449,28 @@
       @media screen and (max-width: 850px) {
         .dashboardTickets .project-tickets .bug-ticket {
           grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-areas: 'title status created user'; } }
+          grid-template-areas: 'title status created user';
+          font-size: 0.9em; } }
+
+.submitNewBug.submitNewBugADD {
+  height: 400px; }
 
 .submitNewBug {
   z-index: 2;
   position: absolute;
   flex: 0 0 100%;
-  width: 75vw;
-  height: 50vh;
-  top: 50px;
-  left: 12%;
+  width: 700px;
+  height: 350px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 12px;
   background-color: #801f3f;
   color: #fff2f6; }
+  @media screen and (max-width: 600px) {
+    .submitNewBug {
+      height: 375px;
+      width: 75vw; } }
   .submitNewBug .newBugForm {
     display: flex;
     flex-direction: column;
@@ -489,3 +509,16 @@
       font-size: 1em; }
       .submitNewBug .newBugForm .closeBox:hover {
         cursor: pointer; }
+    .submitNewBug .newBugForm .editBugBTNWrapper {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      align-items: center; }
+      @media screen and (max-width: 600px) {
+        .submitNewBug .newBugForm .editBugBTNWrapper {
+          flex-direction: column;
+          gap: 0; } }
+      .submitNewBug .newBugForm .editBugBTNWrapper .deleteBTN {
+        background-color: #f55f5f;
+        border: #801f3f 1px solid;
+        color: #fff2f6; }

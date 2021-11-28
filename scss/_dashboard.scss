@@ -246,6 +246,14 @@
       color: $main-text-colour;
       border-radius: 15px;
     }
+    .counter.open,
+    .counter.closed,
+    .counter.critical {
+      height: 100%;
+      @media screen and (max-width: 850px) {
+        height: inherit;
+      }
+    }
   }
 }
 
@@ -307,6 +315,7 @@
     }
     .bug-ticket {
       margin-top: 20px;
+      margin-bottom: 20px;
       color: $main-text-colour;
       font-size: 0.74em;
       //   padding-bottom: 10px;
@@ -320,6 +329,7 @@
       align-items: center;
       text-align: center;
       grid-template-areas: '. title status created user .';
+      font-size: 1em;
       .bugNumber {
         grid-area: title;
       }
@@ -348,22 +358,31 @@
       @media screen and (max-width: 850px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 'title status created user';
+        font-size: 0.9em;
       }
     }
   }
 }
 
+.submitNewBug.submitNewBugADD {
+  height: 400px;
+}
 .submitNewBug {
   z-index: 2;
   position: absolute;
   flex: 0 0 100%;
-  width: 75vw;
-  height: 50vh;
-  top: 50px;
-  left: 12%;
+  width: 700px;
+  height: 350px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 12px;
   background-color: $main-text-colour;
   color: $light-text-colour;
+  @media screen and (max-width: 600px) {
+    height: 375px;
+    width: 75vw;
+  }
   .newBugForm {
     display: flex;
     flex-direction: column;
@@ -408,6 +427,22 @@
       font-size: 1em;
       &:hover {
         cursor: pointer;
+      }
+    }
+    // Button Wrapper
+    .editBugBTNWrapper {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      align-items: center;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 0;
+      }
+      .deleteBTN {
+        background-color: $critical-bugs;
+        border: $main-text-colour 1px solid;
+        color: $light-text-colour;
       }
     }
   }

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import demoImg from '../../imgs/demoimg.png';
+import dashboardimg from '../../imgs/dashboardimg.PNG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +10,7 @@ export default function LandingBody() {
     <Fragment>
       {/* Hero Body */}
       <div className='hero-body'>
-        <img src={demoImg} alt='demo of bugshaker' className='heroIMG' />
+        <img src={dashboardimg} alt='demo of bugshaker' className='heroIMG' />
         <h2>Shake Your Bugs Away</h2>
         <p>
           A clean and modern UI built to help small scale teams tackle their bug

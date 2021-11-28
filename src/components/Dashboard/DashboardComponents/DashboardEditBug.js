@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useAuth } from '../../../contexts/AuthContext';
 import { db } from '../../../firebase';
-import { ref, onValue, update } from '@firebase/database';
+import { ref, remove, update } from '@firebase/database';
 
 export default function DashboardEditBug({ setEditBug, bugList }) {
   const { currentUser } = useAuth();
@@ -24,6 +24,7 @@ export default function DashboardEditBug({ setEditBug, bugList }) {
       db,
       `orgs/${currentUser.photoURL}/bugs/${bugIDState}`
     );
+    // Attempt to update if fails, catches error
     try {
       update(instanceBug, {
         status: bugSTATUSState,
@@ -33,18 +34,24 @@ export default function DashboardEditBug({ setEditBug, bugList }) {
       setEditBug(false);
       console.log(error);
     }
-    // This breaks by called itself twice
-    // onValue(instanceBug, (snapshot) => {
-    //   if (snapshot.exists()) {
-    //     update(instanceBug, {
-    //       status: bugSTATUSState,
-    //       updatedBy: currentUser.displayName,
-    //     }).then(setEditBug(false));
-    //   } else {
-    //     // display error
-    //     return setEditBug(false);
-    //   }
-    // });
+  };
+
+  // Delete the selected bug in system
+  const deleteEditBug = (e) => {
+    e.preventDefault();
+    setBugIDState(parseInt(bugIDRef.current.value));
+    // Edit Bug
+    let instanceBug = ref(
+      db,
+      `orgs/${currentUser.photoURL}/bugs/${bugIDState}`
+    );
+    try {
+      remove(instanceBug);
+      setEditBug(false);
+    } catch (error) {
+      setEditBug(false);
+      console.log(error);
+    }
   };
 
   const updateIDRef = () => {
@@ -96,12 +103,20 @@ export default function DashboardEditBug({ setEditBug, bugList }) {
           disabled
           required
         />
-        <input
-          type='submit'
-          className='submitNewBugBTN'
-          value='Update Bug'
-          onClick={createEditBug}
-        ></input>
+        <div className='editBugBTNWrapper'>
+          <input
+            type='submit'
+            className='submitNewBugBTN deleteBTN'
+            value='Delete Bug'
+            onClick={deleteEditBug}
+          ></input>
+          <input
+            type='submit'
+            className='submitNewBugBTN'
+            value='Update Bug'
+            onClick={createEditBug}
+          ></input>
+        </div>
       </form>
     </div>
   );
