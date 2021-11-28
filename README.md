@@ -29,4 +29,4 @@
 - React had some syntax changes that I was unaware of. It was easy to fix with a quick Google search into the documentation, but it taught me the significance of updating versions without first understanding what was actually changing
 - React State was something I thought I understood. However, in the beginning I was not using it by passing it top-down, but rather trying to do everything in the child element. I have a better understanding of React as a whole plus the useState() hook.
 
-View a live demo [here](https://www.bugshaker.com/) hosted with Netlify.
+View a live demo [here](https://www.bugshaker.com/) hosted with Firebase.
