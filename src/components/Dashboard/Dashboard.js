@@ -41,7 +41,7 @@ export default function UserDashboard() {
     <Fragment>
       <div className='dashboardContainer'>
         <DashboardNavbar />
-        <DashboardMain />
+        <DashboardMain bugs={bugs} />
         <DashboardOverview bugs={bugs} />
         <DashboardTickets bugs={bugs} />
       </div>

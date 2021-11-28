@@ -309,6 +309,8 @@
       margin-top: 20px;
       color: $main-text-colour;
       font-size: 0.74em;
+      //   padding-bottom: 10px;
+      //   border-bottom: $main-text-colour 2px solid;
       //   Grid Logic
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -340,6 +342,9 @@
       .CLOSED {
         background-color: $closed-bugs;
       }
+      //   &:hover {
+      //     cursor: pointer;
+      //   }
       @media screen and (max-width: 850px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 'title status created user';
