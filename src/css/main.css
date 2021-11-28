@@ -365,7 +365,7 @@
     .dashboardOverview .bugCounterItems .counter.open,
     .dashboardOverview .bugCounterItems .counter.closed,
     .dashboardOverview .bugCounterItems .counter.critical {
-      height: 100%; }
+      height: 90%; }
       @media screen and (max-width: 850px) {
         .dashboardOverview .bugCounterItems .counter.open,
         .dashboardOverview .bugCounterItems .counter.closed,

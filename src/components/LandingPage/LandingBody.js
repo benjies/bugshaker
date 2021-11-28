@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import demoImg from '../../imgs/demoimg.png';
 import dashboardimg from '../../imgs/dashboardimg.PNG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faFileAlt } from '@fortawesome/free-solid-svg-icons';
