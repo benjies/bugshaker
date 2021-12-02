@@ -100,3 +100,14 @@
     color: $main-text-colour;
   }
 }
+.demoBTN {
+  text-align: center;
+  margin-bottom: 15px;
+  span {
+    color: $main-text-colour;
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

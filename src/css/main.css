@@ -173,6 +173,15 @@
   .signup-login a {
     color: #801f3f; }
 
+.demoBTN {
+  text-align: center;
+  margin-bottom: 15px; }
+  .demoBTN span {
+    color: #801f3f;
+    text-decoration: underline; }
+    .demoBTN span:hover {
+      cursor: pointer; }
+
 .dashboardContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

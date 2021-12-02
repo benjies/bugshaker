@@ -28,6 +28,19 @@ export const Login = () => {
     setLoading(false);
   }
 
+  async function demoLogin() {
+    // Attempt to login
+    try {
+      setError('');
+      setLoading(true);
+      await login('test@test.com', 'testing');
+      history('/dashboard');
+    } catch {
+      setError('Failed to sign in');
+    }
+    setLoading(false);
+  }
+
   return (
     <Fragment>
       <div className='userAuthoNavbar'>
@@ -62,6 +75,9 @@ export const Login = () => {
           />
         </form>
       </div>
+      <p className='demoBTN'>
+        <span onClick={() => demoLogin()}>Login</span> with Demo Account
+      </p>
       <p className='signup-login'>
         Don't have an account? <Link to='/signup'>Sign Up</Link>
       </p>

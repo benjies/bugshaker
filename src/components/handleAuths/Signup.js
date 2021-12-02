@@ -14,7 +14,7 @@ export const Signup = () => {
   const passwordConfirmRef = useRef();
   const orgIDRef = useRef();
   //   const orgIDRef = useRef();
-  const { signup } = useAuth();
+  const { signup, login } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
@@ -35,6 +35,19 @@ export const Signup = () => {
       history('/dashboard');
     } catch {
       setError('Failed to signup');
+    }
+    setLoading(false);
+  }
+  // Demo Login Function
+  async function demoLogin() {
+    // Attempt to login
+    try {
+      setError('');
+      setLoading(true);
+      await login('test@test.com', 'testing');
+      history('/dashboard');
+    } catch {
+      setError('Failed to sign in');
     }
     setLoading(false);
   }
@@ -82,6 +95,9 @@ export const Signup = () => {
           />
         </form>
       </div>
+      <p className='demoBTN'>
+        <span onClick={() => demoLogin()}>Login</span> with Demo Account
+      </p>
       <p className='signup-login'>
         Already have an account? <Link to='/login'>Login</Link>
       </p>
