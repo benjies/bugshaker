@@ -122,7 +122,9 @@ export default function EditingBug({
                   >
                     X
                   </p>
-                ) : null}
+                ) : (
+                  <p className='deleteCommentNonAuthBTN'>X</p>
+                )}
               </div>
             );
           })

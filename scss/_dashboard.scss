@@ -482,6 +482,17 @@
     cursor: pointer;
   }
 }
+.deleteCommentNonAuthBTN {
+  font-size: 1.2em;
+  text-align: right;
+  color: white;
+  &:hover {
+    cursor: default;
+  }
+  &::selection {
+    user-select: none;
+  }
+}
 .commentTitle,
 .noComments {
   margin-left: 20px;

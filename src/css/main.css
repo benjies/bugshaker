@@ -564,6 +564,15 @@
   .deleteCommentBTN:hover {
     cursor: pointer; }
 
+.deleteCommentNonAuthBTN {
+  font-size: 1.2em;
+  text-align: right;
+  color: white; }
+  .deleteCommentNonAuthBTN:hover {
+    cursor: default; }
+  .deleteCommentNonAuthBTN::selection {
+    user-select: none; }
+
 .commentTitle,
 .noComments {
   margin-left: 20px; }
