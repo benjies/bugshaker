@@ -22,7 +22,7 @@ export default function EditingBug({
       '/' +
       (this.getDate() < 10 ? '0' : '') +
       this.getDate() +
-      +'/' +
+      '/' +
       this.getFullYear()
     );
   };
