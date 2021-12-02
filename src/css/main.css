@@ -407,7 +407,7 @@
     margin-top: 20px;
     color: #801f3f;
     width: 100%;
-    height: 375px;
+    height: 500px;
     overflow-y: scroll; }
     .dashboardTickets .project-tickets::-webkit-scrollbar {
       background: #973555;
@@ -446,6 +446,8 @@
         color: #fff2f6; }
       .dashboardTickets .project-tickets .bug-ticket .CLOSED {
         background-color: #99e9fb; }
+      .dashboardTickets .project-tickets .bug-ticket:hover {
+        cursor: pointer; }
       @media screen and (max-width: 850px) {
         .dashboardTickets .project-tickets .bug-ticket {
           grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -522,3 +524,65 @@
         background-color: #f55f5f;
         border: #801f3f 1px solid;
         color: #fff2f6; }
+
+.goBackBTN {
+  padding: 0.25em;
+  background-color: #801f3f;
+  color: #fff2f6;
+  width: 200px;
+  border-radius: 12px;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 20px; }
+  .goBackBTN:hover {
+    cursor: pointer; }
+
+.addCommentBTN {
+  padding: 0.25em;
+  height: 30px;
+  background-color: #801f3f;
+  color: #fff2f6;
+  width: 200px;
+  border-radius: 12px;
+  text-align: center;
+  border: none; }
+  .addCommentBTN:hover {
+    cursor: pointer; }
+
+.deleteCommentBTN {
+  font-size: 1.2em;
+  text-align: right; }
+  .deleteCommentBTN:hover {
+    cursor: pointer; }
+
+.commentTitle,
+.noComments {
+  margin-left: 20px; }
+
+.commentsWrapper .comment {
+  display: grid;
+  grid-template-columns: 0.1fr 0.6fr 1fr 0.5fr 0.1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 20px;
+  grid-template-areas: '. user string created created';
+  text-align: left;
+  padding: 0.25rem; }
+  .commentsWrapper .comment .commentUser {
+    grid-area: user; }
+  .commentsWrapper .comment .commentString {
+    grid-area: string; }
+  .commentsWrapper .comment .commentCreated {
+    grid-area: created; }
+
+.commentAddWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px;
+  align-items: center;
+  justify-content: center; }
+  .commentAddWrapper .addCommentBTN {
+    font-size: 1em; }
+  .commentAddWrapper .addComment {
+    width: 500px;
+    padding: 0.25rem; }

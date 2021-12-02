@@ -10,7 +10,7 @@ import { ref, onValue, set } from '@firebase/database';
 export default function UserDashboard() {
   // Current User
   const { currentUser } = useAuth();
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [bugs, setBugs] = useState([]);
 
   // Read Bugs
