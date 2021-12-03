@@ -47,7 +47,9 @@ export default function DashboardNavbar() {
         <h1>bugshaker</h1>
       </div>
       <div className='dashNavDisplayBTN'>
-        <p onClick={() => logout()}>Logout</p>
+        <p className='dashNavlogout' onClick={() => logout()}>
+          Logout
+        </p>
       </div>
       <div className='dashNavOptions'>
         {/* Wrap 1 */}

@@ -91,7 +91,7 @@ export default function EditingBug({
   };
 
   return (
-    <div>
+    <div className='commentSection'>
       <p
         className='goBackBTN'
         onClick={() => {

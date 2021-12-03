@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif; }
 
+html {
+  height: 100vh; }
+  html::-webkit-scrollbar {
+    display: none; }
+
 .landingNavbar {
   display: flex;
   flex-direction: row;
@@ -183,6 +188,7 @@
       cursor: pointer; }
 
 .dashboardContainer {
+  max-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 74px 1fr 1fr 1fr;
@@ -223,9 +229,15 @@
   background-color: #973555;
   color: #fff2f6;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
   .dashboardNavbar .dashNavDisplayBTN {
     display: none; }
+  @media screen and (max-width: 850px) {
+    .dashboardNavbar .dashNavlogout {
+      position: absolute;
+      top: 0;
+      right: 0; } }
   .dashboardNavbar .dashNavLogo {
     display: flex;
     justify-content: center;
@@ -303,7 +315,8 @@
   justify-content: space-between; }
   @media screen and (max-width: 850px) {
     .dashboardMain {
-      justify-content: space-between; } }
+      justify-content: space-between;
+      padding: 0.5rem 0; } }
   .dashboardMain h2 {
     margin-left: 20px; }
   .dashboardMain .mainBTNS {
@@ -342,6 +355,9 @@
   flex-direction: column;
   padding: 1rem;
   border-bottom: #aa446463 1px solid; }
+  @media screen and (max-width: 850px) {
+    .dashboardOverview {
+      padding: 0.5rem; } }
   .dashboardOverview h2 {
     color: #801f3f; }
   .dashboardOverview .bugCounterItems {
@@ -358,7 +374,8 @@
       @media screen and (max-width: 850px) {
         .dashboardOverview .bugCounterItems .counter {
           padding: 1rem;
-          width: 200px; } }
+          width: 200px;
+          margin: 10px; } }
     .dashboardOverview .bugCounterItems .counter.open {
       background-color: #9aedbb;
       color: #801f3f;
@@ -385,7 +402,14 @@
   grid-area: dashboardTickets;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  height: 100%; }
+  @media screen and (max-height: 675px) {
+    .dashboardTickets {
+      height: 85%; } }
+  @media screen and (max-height: 555px) {
+    .dashboardTickets {
+      height: 65%; } }
   .dashboardTickets .ticketDisplayTitles {
     width: 100%;
     margin-top: 20px;

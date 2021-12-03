@@ -5,6 +5,14 @@
   font-family: 'DM Sans', sans-serif;
 }
 
+html {
+  height: 100vh;
+  // overflow: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 // Imports
 @import 'ults';
 @import 'landingpage';

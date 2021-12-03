@@ -1,4 +1,5 @@
 .dashboardContainer {
+  max-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 74px 1fr 1fr 1fr;
@@ -58,8 +59,16 @@
   color: $light-text-colour;
   display: flex;
   flex-direction: column;
+  position: relative;
   .dashNavDisplayBTN {
     display: none;
+  }
+  .dashNavlogout {
+    @media screen and (max-width: 850px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
   //   Logo
   .dashNavLogo {
@@ -162,6 +171,7 @@
   justify-content: space-between;
   @media screen and (max-width: 850px) {
     justify-content: space-between;
+    padding: 0.5rem 0;
   }
   h2 {
     margin-left: 20px;
@@ -212,6 +222,9 @@
   flex-direction: column;
   padding: 1rem;
   border-bottom: #aa446463 1px solid;
+  @media screen and (max-width: 850px) {
+    padding: 0.5rem;
+  }
   h2 {
     color: $main-text-colour;
   }
@@ -229,6 +242,7 @@
       @media screen and (max-width: 850px) {
         padding: 1rem;
         width: 200px;
+        margin: 10px;
       }
     }
     .counter.open {
@@ -262,6 +276,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  @media screen and (max-height: '675px') {
+    height: 85%;
+  }
+  @media screen and (max-height: '555px') {
+    height: 65%;
+  }
 
   .ticketDisplayTitles {
     width: 100%;
